@@ -1,4 +1,5 @@
 *.exe
 *.o
+*.zip
 p*/
 .vscode/
