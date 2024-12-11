@@ -1,5 +1,5 @@
-/*Teorema fundamental del álgebre: "si un entero no es divisible por ningún entero inferior
-a su raíz, entonces el entero es primo."*/
+/*Teorema fundamental del Ã¡lgebra: "si un entero no es divisible por ningÃºn entero inferior
+a su raÃ­z, entonces el entero es primo."*/
 
 #include <iostream>
 #include <cmath>
@@ -15,7 +15,7 @@ bool EsPrimo(int n)
     else{
         int lim = (int)sqrt(n);
         int i = 3;
-        while((i<=lim)&&resultado=true){
+        while((i<=lim)&&resultado==true){
             if(n%i == 0) resultado = false;
             else i+=2;
         }
