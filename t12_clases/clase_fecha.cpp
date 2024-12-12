@@ -8,9 +8,9 @@ class cFecha
 public:
     int dia, mes, anio;
 
-    cFecha(void)
+    cFecha(void)  // Constructor
     {
-        dia = 1;		   //un objeto cFecha, se inicializa
+        dia = 1;		   //Objeto cFecha se inicializa
         mes = 1;		   //al 1 de Enero de 1970
         anio = 1970;         //No se usa return
     }
@@ -28,12 +28,26 @@ public:
         cout << "A�o: "; cin >> anio;
         return;
     }
+
     bool EsBisiesto(void)
     {
         if(anio%4==0) return true;
         else return false;
     }
+
+    void FechaActual(void)
+    {
+        // Lo que sea
+        // No se hace porque implicaría el uso de librerias externas
+        // que se salen del temario de la asignatura
+        return;
+    }
 };
+
+int CalcularEdad(cFecha fnac)
+{
+    // Terminar semana 18/12
+}
 
 int main()
 {
