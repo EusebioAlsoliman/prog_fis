@@ -27,24 +27,24 @@ void GuardarMatriz_a_fichero(string nombrefich, double m[][100], int fil, int co
 
 }
 
-void RellenaMatriz(double m[][100], int n)
+void RellenaMatriz(double m[][100], int fil, int col)
 {
-   int i,j;
+    int i, j;
 
-    for(i=0;i<n;i++)
-	for(j=0;j<n;j++)
-    	{
-	   cout << "Elemento " << i << "," << j << ": ";
-	   cin >> m[i][j];
-    	}
-     return;
+    for (i = 0; i < fil; i++)
+        for (j = 0; j < col; j++)
+        {
+            cout << "Elemento " << i << "," << j << ": ";
+            cin >> m[i][j];
+        }
+    return;
 }
 
 int main()
 {
-    int filas = 3, columnas = 3;
+    int filas = 3, columnas = 2;
     double matriz[filas][100];
-    RellenaMatriz(matriz, filas);
+    RellenaMatriz(matriz, filas, columnas);
     GuardarMatriz_a_fichero("ejer68.txt", matriz, filas, columnas);
     return 0;
 }
