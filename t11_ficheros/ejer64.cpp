@@ -27,5 +27,6 @@ void CopiarFichero(string nforiginal, string nfdestino)
 
 int main()
 {
+    CopiarFichero("alumnos.csv", "alumnos_copia.csv");
     return 0;
 }
