@@ -7,8 +7,9 @@ using namespace std;
 class cComplejo
 {
 private:
-    double Re, Im;
+    // double Re, Im;
 public:
+    double Re, Im;
     cComplejo(void) // Constructor
     {
         Re=1;
@@ -101,15 +102,14 @@ public:
         if((Re==op.Re)&&(Im==op.Im)) return false;
         else return true;
     }
-
-    /*
-    void operator << (cComplejo op)
-    {
-        cout << op.Re << " + " << op.Im << "i";
-        return;
-    }
-    */
 };
+
+ostream& operator << (ostream &o, const cComplejo &op)
+{
+    o << op.Re << " + " << op.Im << "i";
+    return o;
+}
+
 
 cComplejo CalcularPotencia(cComplejo num, unsigned int n)
 {
@@ -141,6 +141,30 @@ cComplejo ejer74_SumarComplejosFichero(string nombreFichero)
     return suma;
 }
 
+void IntercambiaComplejos(cComplejo& a, cComplejo& b)
+{
+    cComplejo aux;
+    
+    aux=a;
+    a=b;
+    b=aux;
+    return;
+}
+
+void ejer73_OrdenaComplejos(cComplejo v[], int n)
+{
+    int i, j;
+    
+    for(i=1; i<n; i++)
+        for(j=n-1;j>=i; j--)
+            if(v[j].getParteReal()<v[j-1].getParteReal()) 
+                IntercambiaComplejos(v[j],v[j-1]);
+            else if((v[j].getParteReal()==v[j-1].getParteReal())&&
+                    (v[j].getParteImaginaria()<v[j-1].getParteImaginaria()))
+                IntercambiaComplejos(v[j],v[j-1]);
+    return;
+}
+
 int main()
 {
     cComplejo a;
@@ -152,8 +176,8 @@ int main()
 
     resultado = a + b;
 
-    cout << "El resultado de la suma es: " << resultado.getParteReal() << " + " << resultado.getParteImaginaria() << "i \n";
-    // cout << resultado;
+    // cout << "El resultado de la suma es: " << resultado.getParteReal() << " + " << resultado.getParteImaginaria() << "i \n";
+    cout << resultado << endl;
 
     cComplejo suma_desde_fichero;
     suma_desde_fichero = ejer74_SumarComplejosFichero("complejos.txt");

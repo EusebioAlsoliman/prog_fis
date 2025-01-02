@@ -15,7 +15,7 @@ void intercambia(float& x, float& y)
 
 int main()
 {
-    SetConsoleOutputCP(1252); //1252 es el código para mostrar castellano
+    SetConsoleOutputCP(1252); //1252 es el cï¿½digo para mostrar castellano
 
     float x = 3;
     float y = 9;
